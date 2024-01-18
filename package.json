@@ -10,7 +10,7 @@
     "test": "web-test-runner --coverage",
     "test:watch": "web-test-runner --watch",
     "test-storybook": "test-storybook",
-    "test-storybook:ci": "npx concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"npm run test-storybook\""
+    "test-storybook:ci": "npx concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\"  \"wait-on tcp:6006 && npm run test-storybook\""
   },
   "main": "./indexs.js",
   "dependencies": {
@@ -34,6 +34,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.7",
-    "toml": "^3.0.0"
+    "toml": "^3.0.0",
+    "wait-on": "^7.2.0"
   }
 }
