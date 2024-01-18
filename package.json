@@ -1,0 +1,39 @@
+{
+  "name": "web-components",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "analyze": "cem analyze --litelement",
+    "test": "web-test-runner --coverage",
+    "test:watch": "web-test-runner --watch"
+  },
+  "main": "./indexs.js",
+  "dependencies": {
+    "lit": "^3.1.0"
+  },
+  "customElements": "custom-elements.json",
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.9.0",
+    "@open-wc/testing": "^4.0.0",
+    "@playwright/test": "^1.41.0",
+    "@storybook/addon-essentials": "^7.6.7",
+    "@storybook/addon-links": "^7.6.7",
+    "@storybook/blocks": "^7.6.7",
+    "@storybook/web-components": "^7.6.7",
+    "@storybook/web-components-vite": "^7.6.7",
+    "@web/test-runner": "^0.18.0",
+    "chromatic": "^10.3.1",
+    "playwright": "^1.41.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.7",
+    "toml": "^3.0.0"
+  }
+}
