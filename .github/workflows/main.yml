@@ -12,4 +12,4 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run Storybook tests
-        run: npm test-storybook:ci
+        run: npm run test-storybook:ci
