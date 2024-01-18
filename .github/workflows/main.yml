@@ -4,8 +4,6 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    container:
-      image: mcr.microsoft.com/playwright:v1.41.0-jammy
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -14,6 +12,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run Storybook tests
-        run: npx playwright test
+        run: npm runt testV
         env:
           HOME: /root
