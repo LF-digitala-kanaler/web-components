@@ -10,7 +10,11 @@
     "test": "web-test-runner --coverage",
     "test:watch": "web-test-runner --watch",
     "test-storybook": "test-storybook",
-    "test-storybook:ci": "npx concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\"  \"wait-on tcp:6006 && npm run test-storybook\""
+    "test-storybook:ci": "npx concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\"  \"wait-on tcp:6006 && npm run test-storybook\"",
+    "start-playwright-server": "docker run -p 3000:3000 --rm --init -it mcr.microsoft.com/playwright:v1.39.0-jammy /bin/sh -c \"cd /home/pwuser && npx -y playwright@1.39.0 run-server --port 3000\"",
+    "test:visual-regression": "rm -rf ./__snapshots__/__failures__/ && docker compose -f docker-compose.playwright.yml run --rm -it --build playwright npm run test:visual-regression:docker",
+    "test:visual-regression:local": "NODE_OPTIONS=--max-old-space-size=6144 test-storybook -u --no-index-json --browsers chromium webkit --url http://localhost:6006",
+    "test:visual-regression:docker": "NODE_OPTIONS=--max-old-space-size=6144 test-storybook -u --no-index-json --browsers chromium webkit --url http://host.docker.internal:6006"
   },
   "main": "./indexs.js",
   "dependencies": {
