@@ -10,7 +10,7 @@
     "test": "web-test-runner --coverage",
     "test:watch": "web-test-runner --watch",
     "test-storybook": "test-storybook",
-    "test-storybook:ci": "npx concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"yarn build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"npm test-storybook\""
+    "test-storybook:ci": "npx concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npm run build-storybook --quiet && npx http-server storybook-static --port 6006 --silent\" \"npm run test-storybook\""
   },
   "main": "./indexs.js",
   "dependencies": {
