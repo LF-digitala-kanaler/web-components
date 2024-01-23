@@ -73,7 +73,7 @@ export default defineConfig({
     // },
   ],
 
-  outputDir: "visual-reports",
+  outputDir: "./tests/visual-reports",
 
   /* Run your local dev server before starting the tests */
   webServer: {

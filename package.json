@@ -9,7 +9,8 @@
     "build-storybook": "storybook build",
     "test": "web-test-runner --coverage",
     "test:watch": "web-test-runner --watch",
-    "test:visual": "docker build -t visual-tests . && docker run --rm -it -v ${PWD}/tests:/app/tests visual-tests npm run visual:test",
+    "test:visual": "docker build -t visual-tests . && docker run --rm -it -v ${PWD}/tests:/app/tests -v ${PWD}/playwright-report:/app/playwright-report visual-tests npm run visual:test",
+    "test:update-visual": "docker build -t visual-tests . && docker run --rm -it -v ${PWD}/tests:/app/tests -v ${PWD}/playwright-report:/app/playwright-report visual-tests npm run visual:update",
     "visual:test": "playwright test",
     "visual:update": "playwright test --update-snapshots",
     "visual:report": "playwright show-report"

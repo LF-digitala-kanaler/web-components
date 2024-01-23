@@ -9,8 +9,8 @@ lerna-debug.log*
 
 storybook-static
 coverage/*
-playwright-report/*
-visual-results
+playwright-report
+visual-reports
 
 node_modules
 dist
