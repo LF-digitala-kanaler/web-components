@@ -8,6 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 storybook-static
+coverage/*
+playwright-report/*
+visual-results
 
 node_modules
 dist

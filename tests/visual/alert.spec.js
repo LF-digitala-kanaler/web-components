@@ -1,5 +1,5 @@
 // @ts-check
-import { visualTest } from "../tools.js";
+import { visualTest } from "../../utils/test-tools.js";
 
 const name = "components-alert";
 

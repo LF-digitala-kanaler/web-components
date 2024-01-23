@@ -13,7 +13,7 @@ const config = {
       ? "http://127.0.0.1:6006"
       : "http://127.0.0.1:6006";
     const iframeURL = new URL("iframe.html", targetURL).toString();
-
+    console.log(iframeURL);
     if (testRunnerConfig?.getHttpHeaders) {
       const headers = await testRunnerConfig.getHttpHeaders(iframeURL);
       await browserContext.setExtraHTTPHeaders(headers);
