@@ -80,5 +80,6 @@ export default defineConfig({
     command: `npx http-server storybook-static --port ${PORT}`,
     timeout: 120 * 1000,
     url: process.env.PLAYWRIGHT_TEST_BASE_URL || `http://localhost:${PORT}`,
+    reuseExistingServer: true,
   },
 });
