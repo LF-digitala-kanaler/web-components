@@ -1,17 +1,19 @@
 name: Storybook Tests
 on: push
 jobs:
-  test:
-    timeout-minutes: 60
+  playwright:
+    name: 'Playwright Tests'
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.41.0-jammy
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: "16.x"
+          node-version: 18
       - name: Install dependencies
-        run: npm install
-      - name: Run Storybook tests
-        run: npm runt testV
+        run: npm ci
+      - name: Run your tests
+        run: npx playwright test
         env:
           HOME: /root
