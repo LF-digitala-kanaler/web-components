@@ -9,11 +9,14 @@ WORKDIR /app
 # Set the environment path to node_modules/.bin
 ENV PATH /app/node_modules/.bin:$PATH
 
+EXPOSE 9323
+
 # COPY the needed files to the app folder in Docker image
 COPY package.json /app/
 COPY tests/ /app/tests/
-COPY tools/ /app/tools/
+COPY utils/ /app/utils/
 COPY storybook-static/ /app/storybook-static
+COPY .storybook/ /app/.storybook
 COPY playwright.config.js/ /app/playwright.config.js
 
 # Get the needed libraries to run Playwright

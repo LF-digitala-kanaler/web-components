@@ -9,6 +9,7 @@
     "build-storybook": "storybook build",
     "test": "web-test-runner --coverage",
     "test:watch": "web-test-runner --watch",
+    "test:visual": "docker build -t visual-tests . && docker run --rm -it -v ${PWD}/tests:/app/tests visual-tests npm run visual:test",
     "visual:test": "playwright test",
     "visual:update": "playwright test --update-snapshots",
     "visual:report": "playwright show-report"
@@ -30,6 +31,7 @@
     "@storybook/web-components": "^7.6.7",
     "@storybook/web-components-vite": "^7.6.7",
     "@web/test-runner": "^0.18.0",
+    "http-server": "^14.1.1",
     "jest-image-snapshot": "^6.4.0",
     "playwright": "^1.41.0",
     "react": "^18.2.0",
