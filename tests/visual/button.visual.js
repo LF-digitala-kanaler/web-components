@@ -1,5 +1,5 @@
 // @ts-check
-import { visualTest } from "../../utils/test-tools.js";
+import { visualTest } from "../helpers/visualTest.js";
 
 const name = "components-button";
 

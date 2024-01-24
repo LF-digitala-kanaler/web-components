@@ -12,10 +12,9 @@ ENV PATH /app/node_modules/.bin:$PATH
 # COPY the needed files to the app folder in Docker image
 COPY package.json /app/
 COPY tests/ /app/tests/
-COPY utils/ /app/utils/
 COPY storybook-static/ /app/storybook-static
 COPY .storybook/ /app/.storybook
-COPY playwright.config.js/ /app/playwright.config.js
+COPY ./configs/playwright.config.js/ /app/configs/playwright.config.js
 
 # RUN apt-get update
 # Get the needed libraries to run Playwright

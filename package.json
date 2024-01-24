@@ -7,13 +7,14 @@
     "analyze": "cem analyze --litelement",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "web-test-runner --coverage",
-    "test:watch": "web-test-runner --watch",
-    "test:visual": "docker build -t visual-tests . && docker run --rm -it -v ${PWD}/tests:/app/tests -v ${PWD}/playwright-report:/app/playwright-report visual-tests npm run visual:test",
-    "test:update-visual": "docker build -t visual-tests . && docker run --rm -it -v ${PWD}/tests:/app/tests -v ${PWD}/playwright-report:/app/playwright-report visual-tests npm run visual:update",
-    "visual:test": "playwright test",
-    "visual:update": "playwright test --update-snapshots",
-    "visual:report": "playwright show-report"
+    "test": "npm run build-storybook && npm run test:unit && npm run test:visual",
+    "test:unit": "web-test-runner --coverage --config ./configs/web-test-runner.config.js",
+    "test:unit-watch": "web-test-runner --watch --config ./configs/web-test-runner.config.js",
+    "test:visual": "docker build -t visual-tests . && docker run --rm -it -v ${PWD}/tests:/app/tests -v ${PWD}/playwright-report:/app/playwright-report visual-tests npm run playwright:test",
+    "test:update-visual": "docker build -t visual-tests . && docker run --rm -it -v ${PWD}/tests:/app/tests -v ${PWD}/playwright-report:/app/playwright-report visual-tests npm run playwright:update",
+    "playwright:test": "playwright test --config=configs/playwright.config.js",
+    "playwright:update": "playwright test --update-snapshots --config=configs/playwright.config.js",
+    "playwright:report": "playwright show-report --config=configs/playwright.config.js"
   },
   "main": "./indexs.js",
   "dependencies": {
@@ -28,17 +29,13 @@
     "@storybook/addon-essentials": "^7.6.7",
     "@storybook/addon-links": "^7.6.7",
     "@storybook/blocks": "^7.6.7",
-    "@storybook/test-runner": "^0.16.0",
     "@storybook/web-components": "^7.6.7",
     "@storybook/web-components-vite": "^7.6.7",
     "@web/test-runner": "^0.18.0",
     "http-server": "^14.1.1",
-    "jest-image-snapshot": "^6.4.0",
     "playwright": "^1.41.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.6.7",
-    "toml": "^3.0.0",
-    "wait-on": "^7.2.0"
+    "storybook": "^7.6.7"
   }
 }
