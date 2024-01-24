@@ -19,7 +19,7 @@ jobs:
 
   playwright:
     needs: tests_e2e_netlify_prepare
-    name: "Playwright Tests"
+    name: "Tests"
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.41.0-jammy
