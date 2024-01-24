@@ -10,8 +10,6 @@ const BASE_URL =
  */
 // require('dotenv').config();
 
-console.log('CI', process.env.CI)
-
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
