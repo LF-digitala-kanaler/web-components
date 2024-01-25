@@ -1,7 +1,7 @@
-# Get the base image of Node version 16
-FROM node:20-bookworm
+# FROM node:18 AS node_base
+FROM mcr.microsoft.com/playwright:v1.41.1-jammy
 
-RUN npx -y playwright@1.41.1 install --with-deps
+# COPY --from=node_base / /
 
 # Set the work directory for the application
 WORKDIR /app
@@ -12,12 +12,15 @@ ENV PATH /app/node_modules/.bin:$PATH
 # COPY the needed files to the app folder in Docker image
 COPY package.json /app/
 COPY tests/ /app/tests/
-COPY tools/ /app/tools/
 COPY storybook-static/ /app/storybook-static
-COPY playwright.config.js/ /app/playwright.config.js
+COPY .storybook/ /app/.storybook
+COPY ./configs/playwright.config.js/ /app/configs/playwright.config.js
 
+# RUN apt-get update
 # Get the needed libraries to run Playwright
-RUN apt-get update && apt-get -y install libnss3 libatk-bridge2.0-0 libdrm-dev libxkbcommon-dev libgbm-dev libasound-dev libatspi2.0-0 libxshmfence-dev
+# RUN apt-get -y install libnss3 libatk-bridge2.0-0 libdrm-dev libxkbcommon-dev libgbm-dev libasound-dev libatspi2.0-0 libxshmfence-dev
+
+# RUN npx -y playwright@1.41.1 install --with-deps
 
 # Install the dependencies in Node environment
 RUN npm install

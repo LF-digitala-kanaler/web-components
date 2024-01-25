@@ -3,7 +3,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 const PORT = process.env.PORT || 6006;
 const BASE_URL =
-  process.env.PLAYWRIGHT_TEST_BASE_URL || `http://localhost$:${PORT}`;
+  process.env.PLAYWRIGHT_TEST_BASE_URL || `http://localhost:${PORT}`;
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -14,7 +14,8 @@ const BASE_URL =
  * @see https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({
-  testDir: "./tests/visual",
+  testDir: "../tests/visual",
+  testMatch: "*.visual.js",
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
@@ -25,6 +26,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: "html",
+  updateSnapshots: "missing",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -72,11 +74,15 @@ export default defineConfig({
     // },
   ],
 
-  outputDir: "visual-reports",
+  outputDir: "../tests/visual-result",
+  snapshotPathTemplate:
+    "{testDir}/screenshots/{testFileName}/{arg}-{projectName}{ext}",
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: `npx http-server storybook-static ${PORT}`,
-    url: BASE_URL,
+    command: `npx http-server ../storybook-static --port ${PORT}`,
+    timeout: 120 * 1000,
+    url: process.env.PLAYWRIGHT_TEST_BASE_URL || `http://localhost:${PORT}`,
+    reuseExistingServer: true,
   },
 });

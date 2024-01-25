@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Waiting for Netlify Preview
-        uses: josephduffy/wait-for-netlify-action@v1
+        uses: jakepartusch/wait-for-netlify-action@v1.4
         id: wait-for-netflify-preview
         with:
           site_name: "lf-web-components"
@@ -19,7 +19,7 @@ jobs:
 
   playwright:
     needs: tests_e2e_netlify_prepare
-    name: "Playwright Tests"
+    name: "Tests"
     runs-on: ubuntu-latest
     container:
       image: mcr.microsoft.com/playwright:v1.41.0-jammy
@@ -30,10 +30,17 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm install
-      - name: Run your tests
-        run: npx playwright test
+      - name: Build Storybook
+        run: npm run build-storybook
+      - name: Run unit tests
+        run: npm run test:unit
         env:
           HOME: /root
+      - name: Run visual tests
+        run: npm run playwright:test
+        env:
+          HOME: /root
+          CI: ${{ true }}
           PLAYWRIGHT_TEST_BASE_URL: "https://deploy-preview-${{env.GITHUB_PR_NUMBER}}--${{env.NETLIFY_SITE_NAME}}.netlify.app"
       - uses: actions/upload-artifact@v3
         if: always()
