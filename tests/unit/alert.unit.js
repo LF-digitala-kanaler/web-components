@@ -1,3 +1,6 @@
+// @ts-check
+/* global describe it */
+
 import { html } from "lit";
 import { fixture, expect } from "@open-wc/testing";
 

@@ -1,4 +1,6 @@
 // @ts-check
+/* global process */
+
 import { defineConfig, devices } from "@playwright/test";
 
 const PORT = process.env.PORT || 6006;
