@@ -32,7 +32,7 @@ Here are the available NPM commands:
 
 | Command                            | Description                                  |
 | ---------------------------------- | -------------------------------------------- |
-| `lint`                          	| Lint the code with ESLint and Prettier.
+| `lint`                             | Lint the code with ESLint and Prettier.      |
 | `analyze`                          | Generate Custom Element Manifest (CEM).      |
 | `storybook`                        | Starts the Storybook development server.     |
 | `build-storybook`                  | Builds a static version of Storybook.        |
