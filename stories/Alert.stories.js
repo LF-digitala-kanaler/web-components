@@ -1,17 +1,22 @@
 import { html } from "lit";
-import "../lib/alert";
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories
+import "../lib/alert";
+import "../lib/button";
+import "../.storybook/blocks/stack";
+
+// const placeholderIcon = '<div style="width: 20px; height:20px; border: 2px solid currentColor; border-radius: 50%;" slot="start"></div>';
+
+function Template ({variant, message="Message here" }) {
+	return html`<lf-alert variant="${variant}">${message}</lf-alert>`;
+}
+
 export default {
 	title: "Components/Alert",
-	tags: ["autodocs"],
-	render: ({ variant, closable }) =>
-		html`<lf-alert variant="${variant}" ${closable ? "closable" : ""}}>
-			Message here
-		</lf-alert> `,
+	// tags: ["autodocs"],
+	component: "lf-alert",
+	render: Template
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Info = {
 	args: {
 		variant: "info",
@@ -35,3 +40,35 @@ export const Danger = {
 		variant: "danger",
 	},
 };
+
+export const Variants = {
+	render: () => html`
+		<doc-stack>
+			${Template({...Info.args, message: 'Info'})}
+			${Template({...Success.args, message: 'Success'})}
+			${Template({...Warning.args, message: 'Warning'})}
+			${Template({...Danger.args, message: 'Danger'})}
+		</doc-stack>
+	`
+}
+
+export const WithCloseButton = () => html`
+	<lf-alert closable> Message here </lf-alert>
+`;
+
+export const WithHeading = () => html`
+	<lf-alert closable="Got it!" heading="Heading of alert">
+		Message here
+	</lf-alert>
+`;
+
+export const Temp = () => html`
+	<lf-alert heading="Heading of alert">
+		Message here
+		<lf-button slot="end" variant="secondary" size="small" alert-action="close">Close me!</lf-button>
+	</lf-alert>
+`
+
+export const WithButton = () => html`
+	<lf-alert variant="danger" closable="Got it!"> Message here </lf-alert>
+`;

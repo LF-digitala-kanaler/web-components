@@ -4,13 +4,17 @@ const config = {
 		"../stories/**/*.mdx",
 		"../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
 	],
-	addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+	addons: [
+		"@storybook/addon-links",
+		"@storybook/addon-essentials",
+		"@storybook/addon-docs",
+	],
 	framework: {
 		name: "@storybook/web-components-vite",
 		options: {},
 	},
-	docs: {
-		autodocs: "tag",
-	},
+	// docs: {
+	// 	autodocs: "tag",
+	// },
 };
 export default config;
