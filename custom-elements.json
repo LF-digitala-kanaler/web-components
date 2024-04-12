@@ -1,482 +1,483 @@
 {
-  "schemaVersion": "1.0.0",
-  "readme": "",
-  "modules": [
-    {
-      "kind": "javascript-module",
-      "path": "lib/alert.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "LfAlert",
-          "cssProperties": [
-            {
-              "description": "Background color.",
-              "name": "--lf-alert-background-color"
-            },
-            {
-              "description": "Background color for success messages.",
-              "name": "--lf-alert-success-background-color"
-            },
-            {
-              "description": "Background color for warning messages.",
-              "name": "--lf-alert-warning-background-color"
-            },
-            {
-              "description": "Background color for info messages.",
-              "name": "--lf-alert-info-background-color"
-            },
-            {
-              "description": "Background color for danger messages.",
-              "name": "--lf-alert-danger-background-color"
-            },
-            {
-              "description": "Text color",
-              "name": "--lf-alert-text-color"
-            },
-            {
-              "description": "Font size.",
-              "name": "--lf-alert-text-size"
-            },
-            {
-              "description": "Font weight.",
-              "name": "--lf-alert-text-weight"
-            },
-            {
-              "description": "Accent color used on icons and secondary buttons.",
-              "name": "--lf-alert-accent-color"
-            },
-            {
-              "description": "Horizontal padding inside Alert.",
-              "name": "--lf-alert-padding-x"
-            },
-            {
-              "description": "Vertical padding inside Alert.",
-              "name": "--lf-alert-padding-y"
-            },
-            {
-              "description": "Border radius.",
-              "name": "--lf-alert-border-radius"
-            },
-            {
-              "description": "Spacing between elements inside the Alert.",
-              "name": "--lf-alert-gap"
-            }
-          ],
-          "slots": [
-            {
-              "description": "Before message to the left",
-              "name": "start"
-            },
-            {
-              "description": "Text content (default slot)",
-              "name": ""
-            },
-            {
-              "description": "After message to the right",
-              "name": "end"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "alertLabels",
-              "type": {
-                "text": "object"
-              },
-              "static": true,
-              "default": "{\n\t\t'info': 'Informationsmeddelande',\n\t\t'success': '',\n\t\t'warning': '',\n\t\t'danger': ''\n\t}"
-            },
-            {
-              "kind": "method",
-              "name": "#clickHandler",
-              "parameters": [
-                {
-                  "name": "{ target }"
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "close"
-            },
-            {
-              "kind": "method",
-              "name": "typeOfVariant"
-            },
-            {
-              "kind": "method",
-              "name": "renderCloseButton"
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "privacy": "public",
-              "type": {
-                "text": "'info', 'success', 'warning', 'danger'"
-              },
-              "description": "Variant of Alert.",
-              "default": "info",
-              "attribute": "variant"
-            },
-            {
-              "kind": "field",
-              "name": "heading",
-              "privacy": "public",
-              "type": {
-                "text": "string"
-              },
-              "attribute": "heading"
-            },
-            {
-              "kind": "field",
-              "name": "closable",
-              "privacy": "public",
-              "type": {
-                "text": "string"
-              },
-              "attribute": "closable"
-            },
-            {
-              "kind": "field",
-              "name": "banner",
-              "privacy": "public",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "banner"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "variant",
-              "type": {
-                "text": "'info', 'success', 'warning', 'danger'"
-              },
-              "description": "Variant of Alert.",
-              "default": "info",
-              "fieldName": "variant"
-            },
-            {
-              "name": "heading",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "heading"
-            },
-            {
-              "name": "closable",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "closable"
-            },
-            {
-              "name": "banner",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "banner"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "lf-alert",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "LfAlert",
-          "declaration": {
-            "name": "LfAlert",
-            "module": "lib/alert.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "lf-alert",
-          "declaration": {
-            "name": "LfAlert",
-            "module": "lib/alert.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "lib/button.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "LfButton",
-          "cssProperties": [
-            {
-              "name": "--lf-button-gap"
-            },
-            {
-              "name": "--lf-button-padding-y"
-            },
-            {
-              "name": "--lf-button-small-padding-y"
-            },
-            {
-              "name": "--lf-button-large-padding-y"
-            },
-            {
-              "name": "--lf-button-padding-x"
-            },
-            {
-              "name": "--lf-button-small-padding-x"
-            },
-            {
-              "name": "--lf-button-large-padding-x"
-            },
-            {
-              "name": "--lf-button-outline-width"
-            },
-            {
-              "name": "--lf-button-outline-width"
-            },
-            {
-              "name": "--lf-button-label-text-weight"
-            },
-            {
-              "name": "--lf-button-primary-container-color"
-            },
-            {
-              "name": "--lf-button-primary-hover-container-color"
-            },
-            {
-              "name": "--lf-button-primary-pressed-container-color"
-            },
-            {
-              "name": "--lf-button-primary-accent-color"
-            },
-            {
-              "name": "--lf-button-primary-outline-color"
-            },
-            {
-              "name": "--lf-button-secondary-container-color"
-            },
-            {
-              "name": "--lf-button-secondary-hover-container-color"
-            },
-            {
-              "name": "--lf-button-secondary-pressed-container-color"
-            },
-            {
-              "name": "--lf-button-secondary-accent-color"
-            },
-            {
-              "name": "--lf-button-secondary-outline-color"
-            }
-          ],
-          "slots": [
-            {
-              "description": "Before the button label",
-              "name": "start"
-            },
-            {
-              "description": "Button label (default slot)",
-              "name": "default"
-            },
-            {
-              "description": "After the button label",
-              "name": "end"
-            }
-          ],
-          "members": [
-            {
-              "kind": "method",
-              "name": "renderLoadingState"
-            },
-            {
-              "kind": "field",
-              "name": "slotEndInUse",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false"
-            },
-            {
-              "kind": "field",
-              "name": "variant",
-              "privacy": "public",
-              "type": {
-                "text": "'primary', 'secondary'"
-              },
-              "description": "Variant of button",
-              "default": "\"secondary\"",
-              "attribute": "variant"
-            },
-            {
-              "kind": "field",
-              "name": "size",
-              "privacy": "public",
-              "type": {
-                "text": "'small','normal','large'"
-              },
-              "description": "Size of the button",
-              "default": "normal",
-              "attribute": "size"
-            },
-            {
-              "kind": "field",
-              "name": "arrow",
-              "privacy": "public",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "arrow"
-            },
-            {
-              "kind": "field",
-              "name": "loading",
-              "privacy": "public",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "loading",
-              "reflects": true
-            }
-          ],
-          "attributes": [
-            {
-              "name": "size",
-              "type": {
-                "text": "'small','normal','large'"
-              },
-              "description": "Size of the button",
-              "default": "normal",
-              "fieldName": "size"
-            },
-            {
-              "name": "variant",
-              "type": {
-                "text": "'primary', 'secondary'"
-              },
-              "description": "Variant of button",
-              "default": "\"secondary\"",
-              "fieldName": "variant"
-            },
-            {
-              "name": "arrow",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "arrow"
-            },
-            {
-              "name": "loading",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "loading"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "lf-button",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "LfButton",
-          "declaration": {
-            "name": "LfButton",
-            "module": "lib/button.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "lf-button",
-          "declaration": {
-            "name": "LfButton",
-            "module": "lib/button.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "lib/spinner.js",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "LfSpinner",
-          "members": [
-            {
-              "kind": "field",
-              "name": "size",
-              "privacy": "public",
-              "type": {
-                "text": "string"
-              },
-              "attribute": "size"
-            },
-            {
-              "kind": "field",
-              "name": "negative",
-              "privacy": "public",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "negative"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "size",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "size"
-            },
-            {
-              "name": "negative",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "negative"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "lf-spinner",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "LfSpinner",
-          "declaration": {
-            "name": "LfSpinner",
-            "module": "lib/spinner.js"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "lf-spinner",
-          "declaration": {
-            "name": "LfSpinner",
-            "module": "lib/spinner.js"
-          }
-        }
-      ]
-    }
-  ]
+	"schemaVersion": "1.0.0",
+	"readme": "",
+	"modules": [
+		{
+			"kind": "javascript-module",
+			"path": "lib/alert.js",
+			"declarations": [
+				{
+					"kind": "class",
+					"description": "The magical Alert component that has 4 variants for all your needs!\n\n## Accessibility Considerations\n\nFor `LfAlert` components added dynamically to the DOM after the initial page\nload, additional attributes are needed to ensure accessibility compliance and\noptimal user experience for screen reader users.\n\nSpecifically, when you dynamically create an `LfAlert` instance, add\n`role=\"alert\"` and `aria-live=\"polite\"` attributes. This setup informs\nassistive technologies to announce the alert message without interrupting the\nuser's current activity, making it essential for alerts that contain\nimportant, non-emergency information.\n\n### Example:\n\n```\nconst alert = document.createElement(\"lf-alert\");\nalert.setAttribute(\"role\", \"alert\");\nalert.setAttribute(\"aria-live\", \"polite\");\n// Configure the alert with other necessary attributes or properties\ndocument.body.appendChild(alert);\n\nIncluding these attributes makes the alert more accessible, ensuring that all users receive the alert information promptly and efficiently.\n```",
+					"name": "LfAlert",
+					"cssProperties": [
+						{
+							"description": "Background color.",
+							"name": "--lf-alert-background-color"
+						},
+						{
+							"description": "Background color for success messages.",
+							"name": "--lf-alert-success-background-color"
+						},
+						{
+							"description": "Background color for warning messages.",
+							"name": "--lf-alert-warning-background-color"
+						},
+						{
+							"description": "Background color for info messages.",
+							"name": "--lf-alert-info-background-color"
+						},
+						{
+							"description": "Background color for danger messages.",
+							"name": "--lf-alert-danger-background-color"
+						},
+						{
+							"description": "Text color",
+							"name": "--lf-alert-text-color"
+						},
+						{
+							"description": "Font size.",
+							"name": "--lf-alert-text-size"
+						},
+						{
+							"description": "Font weight.",
+							"name": "--lf-alert-text-weight"
+						},
+						{
+							"description": "Accent color used on icons and secondary buttons.",
+							"name": "--lf-alert-accent-color"
+						},
+						{
+							"description": "Horizontal padding inside Alert.",
+							"name": "--lf-alert-padding-x"
+						},
+						{
+							"description": "Vertical padding inside Alert.",
+							"name": "--lf-alert-padding-y"
+						},
+						{
+							"description": "Border radius.",
+							"name": "--lf-alert-border-radius"
+						},
+						{
+							"description": "Spacing between elements inside the Alert.",
+							"name": "--lf-alert-gap"
+						}
+					],
+					"slots": [
+						{
+							"description": "Before message to the left",
+							"name": "start"
+						},
+						{
+							"description": "Text content (default slot)",
+							"name": ""
+						},
+						{
+							"description": "After message to the right",
+							"name": "end"
+						}
+					],
+					"members": [
+						{
+							"kind": "field",
+							"name": "labels",
+							"type": {
+								"text": "object"
+							},
+							"static": true,
+							"default": "{\n\t\tinfo: \"Informationsmeddelande\",\n\t\tsuccess: \"Bekräftande meddelande\",\n\t\twarning: \"Varningsmeddelande\",\n\t\tdanger: \"Felmeddelande\",\n\t}"
+						},
+						{
+							"kind": "method",
+							"name": "#clickHandler",
+							"parameters": [
+								{
+									"name": "{ target }"
+								}
+							]
+						},
+						{
+							"kind": "method",
+							"name": "close"
+						},
+						{
+							"kind": "method",
+							"name": "typeOfVariant"
+						},
+						{
+							"kind": "method",
+							"name": "renderCloseButton"
+						},
+						{
+							"kind": "field",
+							"name": "variant",
+							"privacy": "public",
+							"type": {
+								"text": "\"info\" | \"success\" | \"warning\" | \"danger\""
+							},
+							"description": "Variant of Alert. Default is `info`",
+							"default": "info",
+							"attribute": "variant"
+						},
+						{
+							"kind": "field",
+							"name": "heading",
+							"privacy": "public",
+							"type": {
+								"text": "string"
+							},
+							"attribute": "heading"
+						},
+						{
+							"kind": "field",
+							"name": "closable",
+							"privacy": "public",
+							"type": {
+								"text": "string"
+							},
+							"attribute": "closable"
+						},
+						{
+							"kind": "field",
+							"name": "banner",
+							"privacy": "public",
+							"type": {
+								"text": "boolean"
+							},
+							"attribute": "banner"
+						}
+					],
+					"attributes": [
+						{
+							"name": "variant",
+							"type": {
+								"text": "\"info\" | \"success\" | \"warning\" | \"danger\""
+							},
+							"description": "Variant of Alert. Default is `info`",
+							"default": "info",
+							"fieldName": "variant"
+						},
+						{
+							"name": "heading",
+							"type": {
+								"text": "string"
+							},
+							"fieldName": "heading"
+						},
+						{
+							"name": "closable",
+							"type": {
+								"text": "string"
+							},
+							"fieldName": "closable"
+						},
+						{
+							"name": "banner",
+							"type": {
+								"text": "boolean"
+							},
+							"fieldName": "banner"
+						}
+					],
+					"superclass": {
+						"name": "LitElement",
+						"package": "lit"
+					},
+					"tagName": "lf-alert",
+					"summary": "This is the Alert component!",
+					"customElement": true
+				}
+			],
+			"exports": [
+				{
+					"kind": "js",
+					"name": "LfAlert",
+					"declaration": {
+						"name": "LfAlert",
+						"module": "lib/alert.js"
+					}
+				},
+				{
+					"kind": "custom-element-definition",
+					"name": "lf-alert",
+					"declaration": {
+						"name": "LfAlert",
+						"module": "lib/alert.js"
+					}
+				}
+			]
+		},
+		{
+			"kind": "javascript-module",
+			"path": "lib/button.js",
+			"declarations": [
+				{
+					"kind": "class",
+					"description": "",
+					"name": "LfButton",
+					"cssProperties": [
+						{
+							"name": "--lf-button-gap"
+						},
+						{
+							"name": "--lf-button-padding-y"
+						},
+						{
+							"name": "--lf-button-small-padding-y"
+						},
+						{
+							"name": "--lf-button-large-padding-y"
+						},
+						{
+							"name": "--lf-button-padding-x"
+						},
+						{
+							"name": "--lf-button-small-padding-x"
+						},
+						{
+							"name": "--lf-button-large-padding-x"
+						},
+						{
+							"name": "--lf-button-outline-width"
+						},
+						{
+							"name": "--lf-button-outline-width"
+						},
+						{
+							"name": "--lf-button-label-text-weight"
+						},
+						{
+							"name": "--lf-button-primary-container-color"
+						},
+						{
+							"name": "--lf-button-primary-hover-container-color"
+						},
+						{
+							"name": "--lf-button-primary-pressed-container-color"
+						},
+						{
+							"name": "--lf-button-primary-accent-color"
+						},
+						{
+							"name": "--lf-button-primary-outline-color"
+						},
+						{
+							"name": "--lf-button-secondary-container-color"
+						},
+						{
+							"name": "--lf-button-secondary-hover-container-color"
+						},
+						{
+							"name": "--lf-button-secondary-pressed-container-color"
+						},
+						{
+							"name": "--lf-button-secondary-accent-color"
+						},
+						{
+							"name": "--lf-button-secondary-outline-color"
+						}
+					],
+					"slots": [
+						{
+							"description": "Before the button label",
+							"name": "start"
+						},
+						{
+							"description": "Button label (default slot)",
+							"name": "default"
+						},
+						{
+							"description": "After the button label",
+							"name": "end"
+						}
+					],
+					"members": [
+						{
+							"kind": "method",
+							"name": "renderLoadingState"
+						},
+						{
+							"kind": "field",
+							"name": "slotEndInUse",
+							"type": {
+								"text": "boolean"
+							},
+							"default": "false"
+						},
+						{
+							"kind": "field",
+							"name": "variant",
+							"privacy": "public",
+							"type": {
+								"text": "'primary', 'secondary'"
+							},
+							"description": "Variant of button. Default is `\"secondary\"`",
+							"default": "\"secondary\"",
+							"attribute": "variant"
+						},
+						{
+							"kind": "field",
+							"name": "size",
+							"privacy": "public",
+							"type": {
+								"text": "'small','normal','large'"
+							},
+							"description": "Size of the button. Default is `normal`",
+							"default": "normal",
+							"attribute": "size"
+						},
+						{
+							"kind": "field",
+							"name": "arrow",
+							"privacy": "public",
+							"type": {
+								"text": "boolean"
+							},
+							"attribute": "arrow"
+						},
+						{
+							"kind": "field",
+							"name": "loading",
+							"privacy": "public",
+							"type": {
+								"text": "boolean"
+							},
+							"attribute": "loading",
+							"reflects": true
+						}
+					],
+					"attributes": [
+						{
+							"name": "size",
+							"type": {
+								"text": "'small','normal','large'"
+							},
+							"description": "Size of the button. Default is `normal`",
+							"default": "normal",
+							"fieldName": "size"
+						},
+						{
+							"name": "variant",
+							"type": {
+								"text": "'primary', 'secondary'"
+							},
+							"description": "Variant of button. Default is `\"secondary\"`",
+							"default": "\"secondary\"",
+							"fieldName": "variant"
+						},
+						{
+							"name": "arrow",
+							"type": {
+								"text": "boolean"
+							},
+							"fieldName": "arrow"
+						},
+						{
+							"name": "loading",
+							"type": {
+								"text": "boolean"
+							},
+							"fieldName": "loading"
+						}
+					],
+					"superclass": {
+						"name": "LitElement",
+						"package": "lit"
+					},
+					"tagName": "lf-button",
+					"customElement": true
+				}
+			],
+			"exports": [
+				{
+					"kind": "js",
+					"name": "LfButton",
+					"declaration": {
+						"name": "LfButton",
+						"module": "lib/button.js"
+					}
+				},
+				{
+					"kind": "custom-element-definition",
+					"name": "lf-button",
+					"declaration": {
+						"name": "LfButton",
+						"module": "lib/button.js"
+					}
+				}
+			]
+		},
+		{
+			"kind": "javascript-module",
+			"path": "lib/spinner.js",
+			"declarations": [
+				{
+					"kind": "class",
+					"description": "",
+					"name": "LfSpinner",
+					"members": [
+						{
+							"kind": "field",
+							"name": "size",
+							"privacy": "public",
+							"type": {
+								"text": "string"
+							},
+							"attribute": "size"
+						},
+						{
+							"kind": "field",
+							"name": "negative",
+							"privacy": "public",
+							"type": {
+								"text": "boolean"
+							},
+							"attribute": "negative"
+						}
+					],
+					"attributes": [
+						{
+							"name": "size",
+							"type": {
+								"text": "string"
+							},
+							"fieldName": "size"
+						},
+						{
+							"name": "negative",
+							"type": {
+								"text": "boolean"
+							},
+							"fieldName": "negative"
+						}
+					],
+					"superclass": {
+						"name": "LitElement",
+						"package": "lit"
+					},
+					"tagName": "lf-spinner",
+					"customElement": true
+				}
+			],
+			"exports": [
+				{
+					"kind": "js",
+					"name": "LfSpinner",
+					"declaration": {
+						"name": "LfSpinner",
+						"module": "lib/spinner.js"
+					}
+				},
+				{
+					"kind": "custom-element-definition",
+					"name": "lf-spinner",
+					"declaration": {
+						"name": "LfSpinner",
+						"module": "lib/spinner.js"
+					}
+				}
+			]
+		}
+	]
 }

@@ -9,10 +9,10 @@ export class DocStack extends LitElement {
 			gap: 16px;
 			width: 100%;
 		}
-	`
+	`;
 
 	render() {
-		return html`<slot></slot>`
+		return html`<slot></slot>`;
 	}
 }
 

@@ -6,15 +6,10 @@ import { defineConfig, devices } from "@playwright/test";
 const PORT = process.env.PORT || 6006;
 const BASE_URL =
 	process.env.PLAYWRIGHT_TEST_BASE_URL || `http://localhost:${PORT}`;
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
+/** Read environment variables from file. https://github.com/motdotla/dotenv */
 // require('dotenv').config();
 
-/**
- * @see https://playwright.dev/docs/test-configuration
- */
+/** @see https://playwright.dev/docs/test-configuration */
 export default defineConfig({
 	testDir: "../tests/visual",
 	testMatch: "*.visual.js",

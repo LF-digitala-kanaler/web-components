@@ -19,6 +19,6 @@ module.exports = {
 		ecmaVersion: "latest",
 		sourceType: "module",
 	},
-	ignorePatterns: ["storybook-static", "coverage"],
+	ignorePatterns: ["storybook-static", "coverage", "jsdoc"],
 	rules: {},
 };

@@ -1,5 +1,5 @@
 # FROM node:18 AS node_base
-FROM mcr.microsoft.com/playwright:v1.41.1-jammy
+FROM mcr.microsoft.com/playwright:v1.43.0-jammy
 
 # COPY --from=node_base / /
 

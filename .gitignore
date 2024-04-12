@@ -11,6 +11,7 @@ storybook-static
 coverage
 playwright-report
 visual-reports
+jsdoc
 
 node_modules
 dist
