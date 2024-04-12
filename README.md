@@ -34,6 +34,7 @@ Here are the available NPM commands:
 | ---------------------------------- | -------------------------------------------- |
 | `lint`                             | Lint the code with ESLint and Prettier.      |
 | `analyze`                          | Generate Custom Element Manifest (CEM).      |
+| `document`                         | Generate documentation in HTML fomr JSDoc.   |
 | `storybook`                        | Starts the Storybook development server.     |
 | `build-storybook`                  | Builds a static version of Storybook.        |
 | `test`                             | Runs all unit and visual tests.              |
