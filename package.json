@@ -1,6 +1,6 @@
 {
 	"name": "@lansforsakringar/web-components",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"type": "module",
 	"scripts": {
 		"lint": "npx eslint . -c configs/.eslintrc.cjs && npx prettier . --write --config configs/.prettierrc",
