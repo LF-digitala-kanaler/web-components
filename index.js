@@ -1,2 +1,2 @@
-export { LfAlert } from "./lib/alert";
-export { LfButton } from "./lib/button";
+export { LfAlert } from "./lib/alert.js";
+export { LfButton } from "./lib/button.js";
